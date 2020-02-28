@@ -110,6 +110,7 @@ html {
 
 .project-container {
     text-align: center;
+    margin-bottom: 10%;
 }
 
 .project-title {
@@ -141,11 +142,15 @@ html {
     font-size: 24px;
 }
 
-.links-contato {
-    text-decoration: underline;
+.contact-text {
     text-align: center;
     line-height: 100px;
     font-size: 36px;
+}
+
+
+.links-contato {
+    text-decoration: underline;
 }
 
 .repo-link {

@@ -1,223 +1,96 @@
-function getProjectLanguages(projects) {
-    let langList = ["All"];
-    for (let id in projects) {
-        const { language } = projects[id];
-        if (!langList.includes(language)) {
-            langList.push(language);
-        }
-    }
-    return langList;
-}
-
-let sobreDescricao = {
-    pt: 'Ei, eu sou o Marco! Sou um cientista da computação graduado pela Universidade Federal de Ouro Preto (UFOP) (2016-20) e um fanático pela tecnologia!',
-    en: `Hey, I'm Marco! I'm a computer scientist graduated at <i>Universidade Federal de Ouro Preto (UFOP)</i> (2016-20) and a technology fanatic.`,
-}
-let dicaProjetos = {
-    pt: 'Você pode acessar o código dos projetos ao clicar em seus títulos.',
-    en: 'You can access the project pages on Github by clicking on their respective titles.',
-}
-
-let sobreDescricaoContainer = document.getElementById("sobre-descricao");
-let projectTip = document.getElementById("projects-tip");
-let buttonsContainer = document.getElementById("buttons-container");
-let projectsContainer = document.getElementById("projects-container");
-let navAboutMe = document.getElementById("nav-about-me");
-let navProjects = document.getElementById("nav-projects");
-let titleAboutMe = document.getElementById('about-me');
-let titleProjects = document.getElementById('projects');
+const projectsListComponent = document.getElementById("projects-list");
 let projects = [
     {
-        title: 'snake-game',
-        language: 'C++',
-        description: {
-            en: 'Simple snake game written in C++ and SFML Library.',
-            pt: 'Simples jogo da cobrinha escrito usando C++ e a biblioteca SFML.',
-        },
-        link: 'https://github.com/TulioAbreu/snake-game',
-        imageURL: 'https://camo.githubusercontent.com/2600db5e2b7f6fb9ccf061eaafa2cbf44b11283e/68747470733a2f2f692e696d6775722e636f6d2f544370325773332e706e67',
+        title: "Omnistack Week #10",
+        imageURL: "./assets/omnistack-week-10.png",
+        tags: ["ReactJS", "React Native", "NodeJS", "Javascript"],
+        description: "Aplicação desenvolvida em um curso online de duração de uma semana. Nesta aplicação é implementada uma espécie de listagem de desenvolvedores. Na página da web são exibidos usuários cadastrados nas proximidades, fazendo o uso de geolocalização. No aplicativo, desenvolvido em React Native, é possível visualizar as localizações em um mapa e acessar o perfil do Github dos usuários próximos.",
+        repoURL: "https://github.com/TulioAbreu/omnistack-week-10/",
     },
     {
-        title: 'my-animelist-songs',
-        language: 'Javascript',
-        description: {
-            pt: 'Script feito em NodeJs para formar uma lista de todas aberturas e encerramentos dos animes presentes em seu MyAnimeList',
-            en: 'NodeJS script for getting all animes opening and songs (name/youtubeURL) from the animes you have seen.',
-        },
-        link: 'https://github.com/TulioAbreu/my-animelist-songs',
-        imageURL: './assets/console_application.png',
+        title: "Arclass Website",
+        imageURL: "./assets/arclass.png",
+        tags: ["ReactJS", "Javascript"],
+        description: "Protótipo de website desenvolvido para uma apresentação da disciplina de Empreendedorismo, na universidade. A idéia desse protótipo era apresentar um \"produto\", que no caso era um marketplace de modelos 3D para sua utilização com tecnologia de realidade aumentada. Por se tratar apenas de um protótipo, apenas a interface foi implementada, sem qualquer funcionalidade real.",
+        repoURL: "https://github.com/TulioAbreu/arclass-website",
     },
     {
-        title: 'omnistack-week-10',
-        language: 'Javascript',
-        description: {
-            pt: 'Aplicação construída durante a Semana Omnistack 10 utilizando React, React Native e NodeJS',
-            en: 'Omnistack Week #10 web application (front-end and back-end) made with React, React Native and NodeJS.',
-        },
-        link: 'https://github.com/TulioAbreu/omnistack-week-10',
-        imageURL: './assets/omnistack-week-10.png',
+        title: "Pokedéx JS",
+        imageURL: "./assets/pokedexjs.png",
+        tags: ["ReactJS", "NodeJS", "MongoDB", "Bootstrap", "Javascript"],
+        description: "Aplicação web desenvolvida para a disciplina de Gerência de Dados da Web, na universidade. Esta aplicação é basicamente um repositório de buscas de dados sobre Pokémon. Todos os dados presentes nas páginas são extraídos e atualizados a partir de outras páginas da web de forma automática. Também foi implementado um mecanismo de armazenamento que funciona como uma espécie de cache temporário, para evitar repetidas requisições similares nas mesmas páginas.",
+        repoURL: "https://github.com/TulioAbreu/pokedex-js",
     },
     {
-        title: 'tindev',
-        language: 'Javascript',
-        description: {
-            pt: 'Aplicação construída durante a Semana Omnistack 8 utilizando React e NodeJS',
-            en: 'Omnistack Week #8 web application (front-end and back-end) made with React, React Native and NodeJS.',
-        },
-        link: 'https://github.com/TulioAbreu/tindev',
-        imageURL: './assets/tindev.png',
+        title:"Omnistack Week #8",
+        imageURL: "./assets/tindev.png",
+        tags: ["ReactJS", "MongoDB", "NodeJS", "Javascript"],
+        description: "Aplicação desenvolvida em um curso online de duração de uma semana. Esta aplicação é uma pequena rede social baseada no Tinder, voltada para desenvolvedores. Neste caso, o usuário deve inserir o seu perfil do Github para realizar o cadastro. A partir disso será exibida uma outra página onde são outros usuários cadastrados. É possível curtir ou descurtir outros desenvolvedores e caso haja um \"match\", é exibida uma janela informativa em tempo real.",
+        repoURL: "https://github.com/TulioAbreu/tindev",
     },
     {
-        title: 'pokedex-js',
-        language: 'Javascript',
-        description: {
-            pt: 'Aplicação web de uma Pokédex que apresenta dados extraídos de outros websites (escrito em React e NodeJS).',
-            en: 'Pokedex web application that scrapes data from famous websites (written with React and NodeJS).',
-        },
-        link: 'https://github.com/TulioAbreu/pokedex-js',
-        imageURL: './assets/pokedexjs.png'
+        title: "MyAnimelistSongs",
+        tags: ["NodeJS", "Javascript"],
+        description: "Este é um script feito em NodeJS para se montar uma lista de todas as músicas de abertura e encerramento de animações assitidas. A partir de um nome de perfil do MyAnimeList, é realizada a extração na web dos nomes dessas músicas de todos as animações adicionadas ao perfil.",
+        repoURL: "https://github.com/TulioAbreu/my-animelist-songs",
     },
     {
-        title: 'arclass-website',
-        language: 'Javascript',
-        description: {
-            pt: 'Protótipo de front-end construído para uma disciplina de empreendedorismo, na universidade. Foi feito utilizando ReactJS.',
-            en:  'Website prototype used in a university class (written in ReactJS).',
-        },
-        link: 'https://github.com/TulioAbreu/arclass-website',
-        imageURL: './assets/arclass.png'
+        title: "Uri Online Judge",
+        tags: ["C++", "Haskell", "Python"],
+        description: "Este é um repositório onde guardo as minhas soluções submetidas no site UriOnlineJudge. Este site contém diversos problemas de programação para serem resolvidos.",
+        repoURL: "https://github.com/TulioAbreu/uri-online-judge",
     },
     {
-        title: 'bluetooth-recorder',
-        language: 'Android Java',
-        description: {
-            pt: 'Aplicativo construído para gravar dados de acelerômetro e enviá-los via bluetooth para outro dispositivo.',
-            en: 'App made for recording accelerometer data and send it via Bluetooth to another device.',
-        },
-        link: 'https://github.com/TulioAbreu/bluetooth-recorder',
-        imageURL: './assets/console_application.png',
+
+        title: "Firefighter Problem",
+        tags: ["Python"],
+        description: "Esta é uma ferramenta desenvolvida para a disciplina Otimização em Redes, na universidade. A partir de instâncias pré-definidas, a ferramenta deverá encontrar uma solução para o problema de brigadistas em grafos. O enunciado é explicado mais detalhadamente no \"readme\" do repositório.",
+        repoURL: "https://github.com/TulioAbreu/firefighter-problem",
     },
     {
-        title: 'firefighter-problem',
-        language: 'Python',
-        description: {
-            pt: 'Minha solução para o problema de brigadistas em grafos, escrita em Python.',
-            en: 'My solution for graphs firefighter problem written in Python.',
-        },
-        link: 'https://github.com/TulioAbreu/firefighter-problem',
-        imageURL: './assets/console_application.png',
-    },
-    {
-        title: 'gido [incomplete]',
-        language: 'Python',
-        description: {
-            pt: 'GiDo é uma ferramenta para converter TODOs em issues no Github.',
-            en: 'GiDo is a scripting tool for converting your code TODOs into GitHub issues.',
-        },
-        link: 'https://github.com/TulioAbreu/gido',
-        imageURL: './assets/console_application.png',
-    },
-    {
-        title: 'uri-online-judge',
-        language: 'All',
-        description: {
-            pt: 'Uso este repositório para manter o controle das soluções de problemas que já resolvi na plataforma.',
-            en: 'I use this repository for keeping track of my solutions to what I\'ve already solved.',
-        },
-        link: 'https://github.com/TulioAbreu/uri-online-judge',
-        imageURL: 'https://www.urionlinejudge.com.br/judge/img/5.0/logo-big.png',
+        title: "Administração de repúblicas",
+        tags: ["Django", "Python"],
+        description: "Este é um website desenvolvido para a disciplina de Programação Web, na Universidade. Participou também do projeto <a href=\"https://www.linkedin.com/in/layla-miranda-103928192/\">Layla Miranda</a>. O objetivo do projeto era implementar um website que funcionasse como um anúncio para república, mas que também controlasse necessidades da casa como, por exemplo, a divisão das contas.",
+        repoURL: "https://github.com/TulioAbreu/administracao-republica",
     }
-]
-let languages = getProjectLanguages(projects);
-let currentLanguage = "";
-setLanguage("pt");
+];
 
-function setLanguage(lang) {
-    currentLanguage = lang;
-    reloadProjects("All");
-    updateNav();
-    updateTitles();
-    updateText();
-}
+function renderProjectsList(projects) {
+    for (let i = 0; i < projects.length; ++i) {
+        const projectData = projects[i];
+        const projectContainerComponent = document.createElement("div");
+        projectContainerComponent.setAttribute("class", "project-container");
 
-function updateText() {
-    switch (currentLanguage) {
-        case 'pt': {
-            sobreDescricaoContainer.innerHTML = sobreDescricao.pt;
-            projectTip.innerHTML = dicaProjetos.pt;
-        } break;
-        case 'en': {
-            sobreDescricaoContainer.innerHTML = sobreDescricao.en;
-            projectTip.innerHTML = dicaProjetos.en;
-        } break;
-    }
-}
-
-function updateTitles() {
-    switch (currentLanguage) {
-        case 'pt': {
-            titleAboutMe.innerHTML = "Sobre";
-            titleProjects.innerHTML = "Projetos";
-        } break;
-        case 'en': {
-            titleAboutMe.innerHTML = "About me";
-            titleProjects.innerHTML = "Projects";
-        } break;
-    }
-}
-
-function updateNav() {
-    switch (currentLanguage) {
-        case 'pt': {
-            navAboutMe.innerHTML = "Sobre";
-            navProjects.innerHTML = "Projetos";
-        } break;
-        case 'en': {
-            navAboutMe.innerHTML = "About me";
-            navProjects.innerHTML = "Projects";
-        } break;
-    }
-}
-
-function selectProgrammingLanguage(selectedLang) {
-    reloadProjects(selectedLang);
-}
-
-function clearProjects() {
-    projectsContainer.innerHTML = "";
-}
-
-function reloadProjects(lang) {
-    clearProjects();
-
-    for (let id in projects) {
-        const project = projects[id];
-
-        let description = "";
-        switch (currentLanguage) {
-        case 'en': {
-            description = project.description.en;
-        } break;
-        case 'pt': {
-            description = project.description.pt;
-        } break;
+        if (projectData.title) {
+            const projectTitleComponent = document.createElement("div");
+            projectTitleComponent.setAttribute("class", "project-title");
+            projectTitleComponent.innerText = projectData.title;
+            projectContainerComponent.appendChild(projectTitleComponent);
         }
 
-        if (lang == "All" || lang == project.language) {
-            projectsContainer.innerHTML += `
-                <div class="project-container">
-                    <img class="project-image" src="${project.imageURL}"/>
-                    <a class="project-title" href="${project.link}"> > ${project.title} </a> 
-                    <div class="project-description">
-                        ${description}
-                    </div>
-                </div>`
+        if (projectData.imageURL) {
+            const projectImageComponent = document.createElement("img");
+            projectImageComponent.setAttribute("class", "project-image");
+            projectImageComponent.setAttribute("src", projectData.imageURL);
+            projectImageComponent.setAttribute("alt", projectData.title);
+            projectContainerComponent.appendChild(projectImageComponent);
         }
+
+        if (projectData.tags) {
+            const projectTagsComponent = document.createElement("div");
+            projectTagsComponent.setAttribute("class", "used-techs");
+            projectTagsComponent.innerText = projectData.tags.join(", ");
+            projectContainerComponent.appendChild(projectTagsComponent);
+        }
+
+        if (projectData.description) {
+            const projectDescriptionComponent = document.createElement("div");
+            projectDescriptionComponent.setAttribute("class", "text project-description");
+            projectDescriptionComponent.innerHTML = projectData.description;
+            projectContainerComponent.appendChild(projectDescriptionComponent);
+        }
+        projectsListComponent.appendChild(projectContainerComponent);
     }
 }
 
-for (let languageId in languages) {
-    buttonsContainer.innerHTML += `<button class="filter-button" onclick="selectProgrammingLanguage('${languages[languageId]}')"> ${languages[languageId].toUpperCase()} </button>`;
-}
-
-selectProgrammingLanguage("All");
+renderProjectsList(projects);

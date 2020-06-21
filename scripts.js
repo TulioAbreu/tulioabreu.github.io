@@ -1,4 +1,5 @@
 const projectsListComponent = document.getElementById("projects-list");
+
 let projects = [
     {
         title: "Omnistack Week #10",
@@ -44,7 +45,7 @@ let projects = [
 
         title: "Firefighter Problem",
         tags: ["Python"],
-        description: "Esta é uma ferramenta desenvolvida para a disciplina Otimização em Redes, na universidade. A partir de instâncias pré-definidas, a ferramenta deverá encontrar uma solução para o problema de brigadistas em grafos. O enunciado é explicado mais detalhadamente no \"readme\" do repositório.",
+        description: "Esta é uma ferramenta desenvolvida para a disciplina Otimização em Redes, na universidade. Participou também do projeto <a href=\"https://www.linkedin.com/in/obrunodias/\">Bruno Dias</a>. A partir de instâncias pré-definidas, a ferramenta deverá encontrar uma solução para o problema de brigadistas em grafos. O enunciado é explicado mais detalhadamente no \"readme\" do repositório.",
         repoURL: "https://github.com/TulioAbreu/firefighter-problem",
     },
     {

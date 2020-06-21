@@ -99,12 +99,17 @@ function renderProjectsList(projects) {
         if (projectData.description) {
             addChild(projectContainerComponent, "div", [
                 {key: "class", value: "text project-description"}
-            ], 
-                (projectData.repoURL) 
-                    ? projectData.description + ` <a src="${projectData.repoURL}" class="repo-link">Veja o repositório</a>.`
-                    : projectData.description
-            );
+            ], projectData.description);
         }
+
+        if (projectData.repoURL) {
+            addChild(projectContainerComponent, "a", [
+                {key: "class", value: "repo-button"},
+                {key: "href", value: projectData.repoURL},
+                {key: "target", value: "_blank"}
+            ], "Veja no GitHub  →");
+        }
+
         projectsListComponent.appendChild(projectContainerComponent);
     }
 }

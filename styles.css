@@ -139,6 +139,24 @@ html {
     gap: 40px;
 }
 
+.repo-button {
+    float: right;
+    color: whitesmoke;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    border: solid white 1px;
+    border-radius: 5px;
+}
+
+.repo-button:visited {
+    color: whitesmoke;
+}
+
+.repo-button:hover {
+    box-shadow: 0 0 5px white;
+}
+
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

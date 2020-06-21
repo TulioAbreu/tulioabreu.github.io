@@ -1,3 +1,7 @@
+hr {
+    margin: 50px 0;
+}
+
 a {
     all: unset;
 }
@@ -147,17 +151,10 @@ html {
     padding: 5px 15px;
     border: solid white 1px;
     border-radius: 5px;
-    transition: box-shadow 0.4s;
-    box-shadow: 0 0 0px white;
 }
 
 .repo-button:visited {
     color: whitesmoke;
-}
-
-.repo-button:hover {
-    box-shadow: 0 0 5px white;
-    transition: box-shadow 0.4s;
 }
 
 @media (max-width: 768px) {

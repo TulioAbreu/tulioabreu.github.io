@@ -56,41 +56,49 @@ let projects = [
 ];
 
 function renderProjectsList(projects) {
+    function addChild(container, tag, attributesList, innerHTML) {
+        const component = document.createElement(tag);
+        for (let i = 0; i < attributesList.length; ++i) {
+            const attribute = attributesList[i];
+            component.setAttribute(attribute.key, attribute.value);
+        }
+        component.innerHTML = innerHTML;
+        container.appendChild(component);
+    }
+
     for (let i = 0; i < projects.length; ++i) {
         const projectData = projects[i];
         const projectContainerComponent = document.createElement("div");
         projectContainerComponent.setAttribute("class", "project-container");
 
         if (projectData.title) {
-            const projectTitleComponent = document.createElement("div");
-            projectTitleComponent.setAttribute("class", "project-title");
-            projectTitleComponent.innerText = projectData.title;
-            projectContainerComponent.appendChild(projectTitleComponent);
+            addChild(projectContainerComponent, "div", [
+                { key: "class", value: "project-title" }
+            ], projectData.title);
         }
 
         if (projectData.imageURL) {
-            const projectImageComponent = document.createElement("img");
-            projectImageComponent.setAttribute("class", "project-image");
-            projectImageComponent.setAttribute("src", projectData.imageURL);
-            projectImageComponent.setAttribute("alt", projectData.title);
-            projectContainerComponent.appendChild(projectImageComponent);
+            addChild(projectContainerComponent, "img", [
+                {key: "class", value: "project-image"},
+                {key: "src", value: projectData.imageURL},
+                {key: "alt", value: projectData.title},
+            ], "");
         }
 
         if (projectData.tags) {
-            const projectTagsComponent = document.createElement("div");
-            projectTagsComponent.setAttribute("class", "used-techs");
-            projectTagsComponent.innerText = projectData.tags.join(", ");
-            projectContainerComponent.appendChild(projectTagsComponent);
+            addChild(projectContainerComponent, "div", [
+                {key: "class", value: "used-techs"}
+            ], projectData.tags.join(", "));
         }
 
         if (projectData.description) {
-            const projectDescriptionComponent = document.createElement("div");
-            projectDescriptionComponent.setAttribute("class", "text project-description");
-            projectDescriptionComponent.innerHTML = projectData.description;
-            if (projectData.repoURL) {
-                projectDescriptionComponent.innerHTML += `<a src="${projectData.repoURL}" class="repo-link">Veja o repositório</a>`;
-            }
-            projectContainerComponent.appendChild(projectDescriptionComponent);
+            addChild(projectContainerComponent, "div", [
+                {key: "class", value: "text project-description"}
+            ], 
+                (projectData.repoURL) 
+                    ? projectData.description + ` <a src="${projectData.repoURL}" class="repo-link">Veja o repositório</a>.`
+                    : projectData.description
+            );
         }
         projectsListComponent.appendChild(projectContainerComponent);
     }

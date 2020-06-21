@@ -21,7 +21,7 @@ body {
     margin: 0;
     background-color: rgb(26, 26, 26);
     color: white;
-    font-family: "Roboto Condensed";
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 html {

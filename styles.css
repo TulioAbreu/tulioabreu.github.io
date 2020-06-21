@@ -1,12 +1,14 @@
 
 @font-face {
     font-family: "Roboto Condensed";
-    src: url("./assets/RobotoCondensed-Regular.ttf");
+    src: local("Roboto Condensed") url("./assets/RobotoCondensed-Regular.ttf");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Roboto Lighter";
-    src: url("./assets/RobotoCondensed-Light.ttf");
+    src: local("Roboto Condensed") url("./assets/RobotoCondensed-Light.ttf");
+    font-display: swap;
 }
 
 a {

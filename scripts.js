@@ -66,11 +66,15 @@ function renderProjectsList(projects) {
         component.innerHTML = innerHTML;
         container.appendChild(component);
     }
+    const javascriptRequiredComponent = document.getElementById("javascript-required");
+    javascriptRequiredComponent.remove();
 
+    
     for (let i = 0; i < projects.length; ++i) {
-        const projectData = projects[i];
         const projectContainerComponent = document.createElement("div");
         projectContainerComponent.setAttribute("class", "project-container");
+
+        const projectData = projects[i];
 
         if (projectData.title) {
             addChild(projectContainerComponent, "div", [

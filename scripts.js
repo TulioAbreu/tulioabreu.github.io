@@ -87,6 +87,9 @@ function renderProjectsList(projects) {
             const projectDescriptionComponent = document.createElement("div");
             projectDescriptionComponent.setAttribute("class", "text project-description");
             projectDescriptionComponent.innerHTML = projectData.description;
+            if (projectData.repoURL) {
+                projectDescriptionComponent.innerHTML += `<a src="${projectData.repoURL}" class="repo-link">Veja o repositório</a>`;
+            }
             projectContainerComponent.appendChild(projectDescriptionComponent);
         }
         projectsListComponent.appendChild(projectContainerComponent);

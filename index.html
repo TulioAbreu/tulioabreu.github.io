@@ -12,53 +12,35 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'UA-159381695-1');
     </script>
 </head>
 <body>
-    <div class="navbar">
-        <div class="navbar-item">
-            <a href="#sobre">Sobre</a>
-        </div>
-        <div class="navbar-item">
-            <a href="#portfolio">Portfolio</a>
-        </div>
-        <div class="navbar-item">
-            <a href="#contato">Contato</a>
-        </div>
-    </div>
-
-    <div class="transition"></div>
-
+    <nav class="navbar">
+        <a class="navbar-item" href="#sobre">Sobre</a>
+        <a class="navbar-item" href="#portfolio">Portfolio</a>
+        <a class="navbar-item" href="#contato">Contato</a>
+    </nav>
     <div class="container">
-        <div class="title" id="sobre">
-            Sobre
-        </div>
-
-        <div class="text description">
-            Meu nome é Marco Túlio! Sou um cientista da computação graduado pela Universidade Federal de Ouro Preto (UFOP). Atualmente, estou trabalhando como Desenvolvedor Junior na empresa MelhorPlano 😍. Tenho experiência com desenvolvimento web, mobile, além de noções básicas na área de aprendizado de máquina.
-        </div>
-
+        <section>
+            <h1 id="sobre" class="title">Sobre</h1>
+            <p class="text description">
+                Meu nome é Marco Túlio! Sou um cientista da computação graduado pela Universidade Federal de Ouro Preto (UFOP). Atualmente, estou trabalhando como Desenvolvedor Junior na empresa MelhorPlano 😍. Tenho experiência com desenvolvimento web, mobile, além de noções básicas na área de aprendizado de máquina.
+            </p>
+        </section>
         <hr/>
-
-        <div id="portfolio" class="title">
-            Portfolio
-        </div>
-
-        <div id="projects-list" class="projects-container">
-            <div id="javascript-required" class="text description" style="height:500px;">
-                Você precisa de Javascript ativado para ver o portfolio 😥
+        <section>
+            <h1 id="portfolio" class="title">Portfolio</h1>
+            <div id="projects-list" class="projects-container">
+                <p id="javascript-required" class="text description" style="height:500px;">
+                    Você precisa de Javascript ativado para ver o portfolio 😥
+                </p>
             </div>
-        </div>
-
+        </section>
         <hr/>
-
-        <div id="contato" class="title">
-            Contato
-        </div>
-        <div class="contact-text">
-            <div>
+        <section>
+            <h1 id="contato" class="title">Contato</h1>
+            <div class="contact-text">
                 <div>
                     <a class="links-contato" href="https://github.com/TulioAbreu/">Github</a>
                 </div>
@@ -72,9 +54,7 @@
                     telefone: <a class="links-contato" href="tel:+5531996522070">31 996 522 070 </a>
                 </div>
             </div>
-        </div>
-
-        <div class="transition"></div>
+        </section>
     </div>
 </body>
 <script src="./scripts.js" ></script>

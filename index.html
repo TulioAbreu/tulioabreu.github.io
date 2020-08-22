@@ -8,6 +8,251 @@
     <link rel="shortcut icon" type="image/png" href="./assets/favicon.png"/>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159381695-1"></script>
+    <style>
+        hr {
+            margin: 50px 0;
+        }
+
+        a {
+            all: unset;
+        }
+
+        a:hover {
+            cursor: pointer;
+        }
+
+        a:visited {
+            color: #B8B8B8;
+        }
+
+        h1 {
+            all: unset;
+        }
+
+        body {
+            margin: 0;
+            background-color: rgb(26, 26, 26);
+            color: whitesmoke;
+            font-family: "Roboto Condensed", sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .navbar-item {
+            padding-left: 50px;
+            line-height: 90px;
+            font-family: "Roboto Lighter";
+            align-items: center;
+            font-size: xx-large;
+            font-weight: lighter;
+            text-transform: uppercase;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .navbar-item:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .container {
+            width: 75%;
+            margin: auto;
+        }
+
+        .title {
+            color: whitesmoke;
+            text-transform: uppercase;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            color: #b8b8b8;
+        }
+
+
+        .description {
+            text-align: justify;
+            font-size: 24px;
+            color: whitesmoke;
+        }
+
+        .photo {
+            display: inline-block;
+            width: 300px;
+            border-radius: 150px;
+
+            margin-left: 20%;
+        }
+
+        .transition {
+            margin-bottom: 50px;
+        }
+
+        .project-container {
+            text-align: center;
+            margin-bottom: 10%;
+        }
+
+        .project-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .project-image {
+            width: 100%;
+            margin-bottom: 30px;
+
+            border-radius: 3px;
+        }
+
+        .used-techs {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: justify;
+
+            margin: auto;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            margin: auto;
+
+            text-align: justify;
+            font-size: 16px;
+        }
+
+        .contact-text {
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+
+
+        .links-contato {
+            text-decoration: underline;
+            font-size: 24px;
+        }
+
+        .repo-link {
+            font-weight: bold;
+            text-decoration: underline;
+            color: whitesmoke;
+        }
+
+        .repo-link:hover {
+            cursor: pointer;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .repo-button {
+            float: right;
+            color: whitesmoke;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 5px 15px;
+            border: solid white 1px;
+            border-radius: 5px;
+        }
+
+        .repo-button:visited {
+            color: whitesmoke;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .description {
+                text-align: justify;
+                margin: auto;
+                font-size: 18px;
+                color: whitesmoke;
+            }
+
+            .navbar-item {
+                padding-left: 50px;
+                line-height: 90px;
+
+                font-family: "Roboto Lighter";
+                align-items: center;
+                font-size: xx-large;
+                font-weight: lighter;
+                text-transform: uppercase;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            .container {
+                width: 90%;
+                margin: auto;
+            }
+
+            .projects-container {
+                display: block;
+                grid-template-columns: unset;
+                gap: unset;
+            }
+
+            .title {
+                text-align: left;
+            }
+
+            .used-techs {
+                width: 100%;
+            }
+            
+            .project-description {
+                width: 100%;
+            }
+        }
+
+        .terminal-wrapper {
+            background-color: #2a2b38;
+            color: #f8f8f2;
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            height: 260px;
+            font-weight: bold;
+            cursor: not-allowed;
+            border: 2px solid whitesmoke;
+            width: 100%;
+            overflow-wrap: break-word;
+        }
+
+        .inline {
+            display: inline-block;
+        }
+
+        .green {
+            color: #50fa7b;
+        }
+
+        .blue {
+            color: rgb(139, 233, 253);
+        }
+
+        .pink {
+            color: rgb(255, 121, 198);
+        }
+
+        .red {
+            color: rgb(255, 85, 85);
+        }
+    </style>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

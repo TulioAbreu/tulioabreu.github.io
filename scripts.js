@@ -3,28 +3,28 @@ const projectsListComponent = document.getElementById("projects-list");
 let projects = [
     {
         title: "Omnistack Week #10",
-        imageURL: "./assets/omnistack-week-10.png",
+        imageURL: "./assets/omnistack-week-10.webp",
         tags: ["ReactJS", "React Native", "NodeJS", "Javascript"],
         description: "Aplicação desenvolvida em um curso online de duração de uma semana. Nesta aplicação é implementada uma espécie de listagem de desenvolvedores. Na página da web são exibidos usuários cadastrados nas proximidades, fazendo o uso de geolocalização. No aplicativo, desenvolvido em React Native, é possível visualizar as localizações em um mapa e acessar o perfil do Github dos usuários próximos.",
         repoURL: "https://github.com/TulioAbreu/omnistack-week-10/",
     },
     {
         title: "Arclass Website",
-        imageURL: "./assets/arclass.png",
+        imageURL: "./assets/arclass.webp",
         tags: ["ReactJS", "Javascript"],
         description: "Protótipo de website desenvolvido para uma apresentação da disciplina de Empreendedorismo, na universidade. A idéia desse protótipo era apresentar um \"produto\", que no caso era um marketplace de modelos 3D para sua utilização com tecnologia de realidade aumentada. Por se tratar apenas de um protótipo, apenas a interface foi implementada, sem qualquer funcionalidade real.",
         repoURL: "https://github.com/TulioAbreu/arclass-website",
     },
     {
         title: "Pokedéx JS",
-        imageURL: "./assets/pokedexjs.png",
+        imageURL: "./assets/pokedexjs.webp",
         tags: ["ReactJS", "NodeJS", "MongoDB", "Bootstrap", "Javascript"],
         description: "Aplicação web desenvolvida para a disciplina de Gerência de Dados da Web, na universidade. Esta aplicação é basicamente um repositório de buscas de dados sobre Pokémon. Todos os dados presentes nas páginas são extraídos e atualizados a partir de outras páginas da web de forma automática. Também foi implementado um mecanismo de armazenamento que funciona como uma espécie de cache temporário, para evitar repetidas requisições similares nas mesmas páginas.",
         repoURL: "https://github.com/TulioAbreu/pokedex-js",
     },
     {
         title:"Omnistack Week #8",
-        imageURL: "./assets/tindev.png",
+        imageURL: "./assets/tindev.webp",
         tags: ["ReactJS", "MongoDB", "NodeJS", "Javascript"],
         description: "Aplicação desenvolvida em um curso online de duração de uma semana. Esta aplicação é uma pequena rede social baseada no Tinder, voltada para desenvolvedores. Neste caso, o usuário deve inserir o seu perfil do Github para realizar o cadastro. A partir disso será exibida uma outra página onde são outros usuários cadastrados. É possível curtir ou descurtir outros desenvolvedores e caso haja um \"match\", é exibida uma janela informativa em tempo real.",
         repoURL: "https://github.com/TulioAbreu/tindev",

@@ -87,6 +87,7 @@ function renderProjectsList(projects) {
                 {key: "class", value: "project-image"},
                 {key: "src", value: projectData.imageURL},
                 {key: "alt", value: projectData.title},
+                {key: "loading", value: "lazy"}
             ], "");
         }
 

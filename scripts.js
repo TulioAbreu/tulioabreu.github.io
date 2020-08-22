@@ -115,3 +115,57 @@ function renderProjectsList(projects) {
 }
 
 renderProjectsList(projects);
+
+const termComponent = document.getElementById("terminal");
+
+function drawText(text, color) {
+    const element = document.createElement("SPAN");
+    element.textContent = text;
+    if (!!color.length) {
+        element.classList.add(color);
+    }
+    termComponent.appendChild(element);
+}
+
+function drawTermPreffix() {
+    const termLinePrefix = [
+        {text: "marco", color: "green"},
+        {text: "@", color: ""},
+        {text: "Computer", color: "blue"},
+        {text: ":", color: ""},
+        {text: "~/Websites/Portfolio", color: "pink"},
+        {text: " » ", color: "red"},
+    ].map(text => drawText(text.text, text.color));
+}
+
+function typeCmd(text) {
+    drawText(text, "");
+    termComponent.appendChild(document.createElement("BR"));
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function executeCommand(command, output) {
+    drawTermPreffix();
+    typeCmd(command);
+    await sleep(500);
+    typeCmd(output);
+}
+
+async function animation() {
+    while (true) {
+        await executeCommand("./welcome.exe", "Seja bem vindo(a) ao meu portfolio!");
+        await sleep(3000);
+        await executeCommand("./name.exe", "Meu nome é Marco Túlio");
+        await sleep(3000);
+        await executeCommand("./job.exe", "Eu trabalho atualmente como desenvolvedor web :)");
+        await sleep(3000);
+        await executeCommand("cls", "");
+        termComponent.innerHTML = "";
+        await sleep(3000);
+    }
+}
+
+animation();

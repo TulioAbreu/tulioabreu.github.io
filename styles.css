@@ -170,6 +170,8 @@ html {
     font-weight: bold;
     cursor: not-allowed;
     border: 2px solid whitesmoke;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 .inline {
